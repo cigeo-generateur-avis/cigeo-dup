@@ -19,7 +19,7 @@ let salut_4 = ["Coucou mes poussins", "Yo les pro-nucléaires", "Cher David Mazo
 
 let salut_punct_1 = [","]
 let salut_punct_2 = [".", " !"]
-let salut_punct_3 = [" ?", ":)", ";)", ":-)", ":(", ":-(", "!!", "!!!", "!!!!", "!!!!!"]
+let salut_punct_3 = [" ?", " :)", " ;)", " :-)", " :(", " :-(", " !!", " !!!", " !!!!", " !!!!!"]
 
 let pres_1 = ["Je m'appelle {prenom} {nom}.", "Je m'appelle {nom} {prenom}.", "Je suis {prenom} {nom}.", "Je suis {nom} {prenom}."]
 let pres_2 = ["Mon pseudo c'est Bidule.", "Mon pseudo c'est Truc."]
@@ -70,6 +70,7 @@ if(ucs(5)){}
 else{
 if(ucs(6)){avis+=smplrpl(bye_2)}
 else{avis+=smplrpl(bye_1)}
+}
 
 if(ucs(3)){
 document.getElementById("nom").innerHTML = rplrplsmpl["nom"] + " " + rplrplsmpl["prenom"];
