@@ -2454,10 +2454,12 @@ let salut_punct_3 = [" ?", " :)", " ;)", " :-)", " :(", " :-(", " !!", " !!!", "
 let pres_1 = ["Je m'appelle {prenom} {nom}.", "Je m'appelle {nom} {prenom}.", "Je suis {prenom} {nom}.", "Je suis {nom} {prenom}.", "Je viens de {villagelocal}.", "J'habite à {villagelocal}.", "Je suis de {villagelocal}.", "Je m'appelle {prenom} {nom} et je suis de {villagelocal}.", "J'habite à {grandeville}.", "Je viens de {grandeville}.", "Je suis de {grandeville}."]
 let pres_2 = ["Mon pseudo c'est Bidule.", "Mon pseudo c'est Truc.", "Je viens de {grandeville}, et c'est pas parce que je viens de loin que je n'ai pas d'avis à donner sur le projet !", "Je viens de {villagelocal} et j'ai donc complètement mon mot à dire sur le projet !", "Mon nom importe peu."]
 
-let argument = ["Je suis contre {trucpacool}.", "Je ne suis pas d'accord avec {trucpacool}.", "À bas {trucpacool} !", "Il faut arrêter {trucpacool !}", "Tout le monde déteste {trucpacool} !", "Le nucléaire c'est vraiment tout pourri.", "Je me demande jusqu'où ira la radioactivité en cas d'accident. J'ai beaucoup d'amis à {grandeville}.", "Je suis contre ce projet parce que l'Andra veut nous exproprier pour construire une poubelle nucléaire.", "L'Autorité environnementale a raison.", "On est pas DUP !", "Honnêtement, rien que le nom, \"Ci-gé-o\", ça sonne super mal.", "De {grandeville} à {villagelocal}, personne ne veut de ce projet.", "Cigéo va polluer les rivières locales.", "Cigéo va polluler les cours d'eau locaux.", "Il y a déjà eu ce genre de projets, en Finlande et aux États-Unis, et ça s'est mal passé à chaque fois.", "Cigéo n'est pas d'utilité publique ! Le projet donne un argument à l'industrie nucléaire pour continuer leur travail, alors qu'il faudrait plutôt tout arrêter !", "Bla bla bla {trucincomprehensible}", "Blah blah blah {trucincomprehensible}", "Bla bla {trucincomprehensible}", "Blah blah {trucincomprehensible}"]
+let argument = ["Je suis contre {trucpacool}.", "Je ne suis pas d'accord avec {trucpacool}.", "À bas {trucpacool} !", "Il faut arrêter {trucpacool} !", "Tout le monde déteste {trucpacool} !", "Le nucléaire c'est vraiment tout pourri.", "Je me demande jusqu'où ira la radioactivité en cas d'accident. J'ai beaucoup d'amis à {grandeville}.", "Je suis contre ce projet parce que l'Andra veut nous exproprier pour construire une poubelle nucléaire.", "L'Autorité environnementale a raison.", "On est pas DUP !", "Honnêtement, rien que le nom, \"Ci-gé-o\", ça sonne super mal.", "De {grandeville} à {villagelocal}, personne ne veut de ce projet.", "Cigéo va polluer les rivières locales.", "Cigéo va polluer les cours d'eau locaux.", "Il y a déjà eu ce genre de projets, en Finlande et aux États-Unis, et ça s'est mal passé à chaque fois.", "Cigéo n'est pas d'utilité publique ! Le projet donne un argument à l'industrie nucléaire pour continuer leur travail, alors qu'il faudrait plutôt tout arrêter !", "Bla bla bla {trucincomprehensible}.", "Blah blah blah {trucincomprehensible}.", "Bla bla {trucincomprehensible}.", "Blah blah {trucincomprehensible}.", "Ce dossier c'est n'importe quoi.",
+"Ce dossier c'est rien que des bêtises.", "DUP ou pas DUP, je suis contre ce projet.", "Est-ce qu'il y a déjà des déchets dans le laboratoire ? On ne sait pas !", "D'abord arrêtez le nucléaire, et ensuite on s'occupera de la question des déchets !", "Andra dégage !", "\"L’étape de la déclaration d’utilité publique du centre de stockage Cigéo emportant mise en compatibilité des documents d’urbanisme est un premier jalon...\" bla bla blah c'est vraiment annuyant votre truc.", "Vous parlez du \"débat public de 2013\" comme si ce débat avait eu une quelconque valeur, c'est ridicule.", "On devrait faire comme à Plogoff dans le temps.", "Non au nucléaire, fermetures des centrales !", "Le nucléaire civil permet l'existence du nucléaire militaire, et rien que ça c'est déjà une bonne raison de rejeter Cigéo et l'industrie dans son ensemble.", "L'Andra achète les consciences.", "L'Andra soudoie les élus locaux par l'intermédiaire du GIP.", "Le GIP est une machine à soudoyer les élus et collectivités locales !", "De toute façon il faut arrêter Cigéo parce qu'à coup sûr ces ingénieurs tous sûrs d'eux-même vont se louper, les puits de ventilation vont avoir un problème, il va falloir évacuer, ça va être l'apocalypse et franchement l'apocalypse ça me tente pas.", "D'abord vous avez mis les déchets dans la mer, ensuite dans d'autres pays, maintenant sous nos pieds... quand est-ce qu'on arrête de les produire, ces déchets ?", "Le dossier de DUP est vraiment compliqué, moi ça me fatigue.",
+"Heureusement qu'il y a quelques images dans le dossier de DUP, parce que vraiment le texte est pénible à lire.", "L'Andra c'est la fatigue."]
 
-let bye_1 = ["Cordialement."]
-let bye_2 = ["Salut les poussins !"]
+let bye_1 = ["Cordialement.", "Bien à vous.", "Merci.", "Cordialement", "Bien à vous", "Merci"]
+let bye_2 = ["Salut les poussins !", "À plus !", "Sans regrets.", "J'espère que ce projet va échouer.", "En espérant ne jamais vous voir ici"]
 
 let sautdeligne = true
 if(ucs(7)){sautdeligne = false}
@@ -2497,6 +2499,12 @@ if(ucs(5)){}
 else{
 if(ucs(6)){avis+=smplrpl(bye_2)}
 else{avis+=smplrpl(bye_1)}
+}
+
+if(ucs(6)){
+avis+="<br/><br/>"
+if(ucs(2)){avis += rplrplsmpl["prenom"]}
+else{avis += rplrplsmpl["prenom"] + " " + rplrplsmpl["nom"]}
 }
 
 if(ucs(3)){
