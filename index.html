@@ -54,15 +54,14 @@ if(sautdeligne){avis+="<br/><br/>"}
 }
 
 ajout_argu = function(ajout_argu_var){
-if(ucs(4)){ajout_argu_var+=smplrpl(argument_2)}
-else{ajout_argu_var+=smplrpl(argument_1)}
-return ajout_argu_var;
+if(ucs(4)){return smplrpl(argument_2)}
+else{return smplrpl(argument_1)}
 }
 
-avis = ajout_argu(avis)
-if(ucs(2)){avis = " " + ajout_argu(avis);}
-if(ucs(2)){avis = " " + ajout_argu(avis);}
-if(ucs(2)){avis = " " + ajout_argu(avis);if(ucs(2)){avis = " " + ajout_argu(avis);if(ucs(2)){avis = " " + ajout_argu(avis);if(ucs(2)){avis = " " + ajout_argu(avis);if(ucs(2)){avis = " " + ajout_argu(avis);if(ucs(2)){avis = " " + ajout_argu(avis);}}}}}}
+avis += ajout_argu(avis)
+if(ucs(2)){avis += " " + ajout_argu(avis);}
+if(ucs(2)){avis += " " + ajout_argu(avis);}
+if(ucs(2)){avis += " " + ajout_argu(avis);if(ucs(2)){avis += " " + ajout_argu(avis);if(ucs(2)){avis += " " + ajout_argu(avis);if(ucs(2)){avis += " " + ajout_argu(avis);if(ucs(2)){avis += " " + ajout_argu(avis);if(ucs(2)){avis += " " + ajout_argu(avis);}}}}}}
 
 if(sautdeligne){avis+="<br/><br/>"}
 
