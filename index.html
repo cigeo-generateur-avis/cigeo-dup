@@ -2440,6 +2440,28 @@ let rplrpl = {
 String.prototype.replaceAt = function(index, replacement){return this.substr(0, index) + replacement + this.substr(index + replacement.length);}
 String.prototype.removeCharAt = function (i) {var tmp = this.split('');tmp.splice(i - 1 , 1);return tmp.join('');}
 Array.prototype.smpl = function(){return this[Math.floor(Math.random()*this.length)];}
+
+function fallbackCopyTextToClipboard(text) {
+  var textArea = document.createElement("textarea");
+  textArea.value = text;
+  // Avoid scrolling to bottom
+  textArea.style.top = "0";
+  textArea.style.left = "0";
+  textArea.style.position = "fixed";
+  document.body.appendChild(textArea);
+  textArea.focus();
+  textArea.select();
+  document.execCommand('copy');
+  document.body.removeChild(textArea);
+}
+function copyTextToClipboard(text) {
+  if (!navigator.clipboard) {
+    fallbackCopyTextToClipboard(text);
+    return;
+  }
+  navigator.clipboard.writeText(text);
+}
+
 function obto(chainee, obto_1, obto_2){
 let table = []
 for (var i = 0; i < chainee.length; i++) {
@@ -2589,4 +2611,4 @@ document.getElementById("nom").innerHTML = rplrplsmpl["prenom"] + " " + rplrplsm
 document.getElementById("avis").innerHTML = avis;
 }
 window.onload = function(){bouton();}
-</script></head><body><h2 style="text-align:center">Générateur d'avis sur Cigéo : Déclaration d'Utilité Publique</h2><div style="text-align: center;"><input type="button" value="Générer un nouvel avis" onclick="bouton()"></div><h3>Nom</h3><div id="nom" style="font-family:monospace"></div><h3>Avis</h3><div id="avis" style="font-family:monospace"></div></body></html>
+</script></head><body><h2 style="text-align:center">Générateur d'avis sur Cigéo : Déclaration d'Utilité Publique</h2><div style="text-align: center;"><input type="button" value="Générer un nouvel avis" onclick="bouton()"></div><h3 style="display:inline-block">Nom</h3> <input type="button" value="Copier dans le presse-papier" onclick="copyTextToClipboard(document.getElementById('nom').innerText)"><div id="nom" style="font-family:monospace"></div><h3 style="display:inline-block">Avis</h3> <input type="button" value="Copier dans le presse-papier" onclick="copyTextToClipboard(document.getElementById('avis').innerText)"><div id="avis" style="font-family:monospace"></div></body></html>
