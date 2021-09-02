@@ -1,15 +1,28 @@
 <html lang="fr"><head><title>Générateur d'avis sur Cigéo : Déclaration d'Utilité Publique</title><script type="text/javascript">
+let rplrpl = {
+  "prenom": ["André", "Josette", "Matthieu", "Clément", "Nicolas", "Didier"],
+  "nom": ["Durand", "Pavot"]
+}
+
 Array.prototype.smpl = function(){return this[Math.floor(Math.random()*this.length)];}
+rplrplfun = function(rplrplfun_var){for(let rplrplkey in rplrpl){truc=rplrpl[rplrplkey].smpl(); rplrplfun_var.replace("{" + rplrplkey + "}", truc);}return rplrplfun_var;}
 ucs = function(ucs_var){if(Math.random() < 1/ucs_var){return true}return false}
 window.onload = function(){
 let avis = ""
 let salut_1 = ["Bonjour"]
 let salut_2 = ["Bonsoir", "Salutations", "Salut"]
 let salut_3 = ["Hey", "Wesh", "Coucou"]
-let salut_4 = ["Coucou mes poussins", "Yo les pro-nucléaires"]
+let salut_4 = ["Coucou mes poussins", "Yo les pro-nucléaires", "Cher David Mazoyer"]
+
 let salut_punct_1 = [","]
 let salut_punct_2 = [".", " !"]
-let salut_punct_3 = [" ?"]
+let salut_punct_3 = [" ?", ":)", ";)", ":-)", ":(", ":-(", "!!", "!!!", "!!!!", "!!!!!"]
+
+let pres_1 = ["Je m'appelle {prenom} {nom}.", "Je m'appelle {nom} {prenom}.", "Je suis {prenom} {nom}.", "Je suis {nom} {prenom}."]
+let pres_2 = ["Mon pseudo c'est Bidule.", "Mon pseudo c'est Truc."]
+
+let sautdeligne = true
+if(ucs(7)){sautdeligne = false}
 
 if(ucs(5)){}
 else{
@@ -17,9 +30,17 @@ if(ucs(12)){avis+=salut_4.smpl()}
 else if(ucs(6)){avis+=salut_3.smpl()}
 else if(ucs(3)){avis+=salut_2.smpl()}
 else{avis+=salut_1.smpl()}
+
 if(ucs(10)){avis+=salut_punct_3.smpl()}
 else if(ucs(3)){avis+=salut_punct_2.smpl()}
 else{avis+=salut_punct_1.smpl()}
+
+if(sautdeligne){avis+="<br/>"}
+}
+
+if(ucs(2)){
+else if(ucs(4)){avis+=pres_2.smpl()}
+else{avis+=pres_1.smpl()}
 }
 
 document.getElementById("avis").innerHTML = avis;
