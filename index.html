@@ -2450,11 +2450,16 @@ else{return chainee }
 }
 function generateRandomLetter() {const alphabet = "abcdefghijklmnopqrstuvwxyz"; return alphabet[Math.floor(Math.random() * alphabet.length)]}
 ucs = function(ucs_var){if(Math.random() < 1/ucs_var){return true}return false}
-let fautedorthosystematik = false
-if(ucs(3)){fautedorthosystematik = true}
+
+bouton = function(){
+
 let rplrplsmpl = {}
 for(let rplrplkey in rplrpl){rplrplsmpl[rplrplkey]=rplrpl[rplrplkey].smpl();}
 rplrplfun = function(rplrplfun_var){for(let rplrplkey in rplrplsmpl){rplrplfun_var = rplrplfun_var.replace("{" + rplrplkey + "}", rplrplsmpl[rplrplkey]);}return rplrplfun_var;}
+
+let fautedorthosystematik = false
+if(ucs(3)){fautedorthosystematik = true}
+
 smplrpl = function(smplrpl_var, fofofo = false){
 smplrpl_var = rplrplfun(smplrpl_var.smpl())
 if(fofofo === true && (fautedorthosystematik || ucs(4))){
@@ -2490,7 +2495,7 @@ if(ok===false){smplrpl_var = smplrpl_var.replaceAt(Math.floor(Math.random()*smpl
 }
 return smplrpl_var
 }
-window.onload = function(){
+
 let avis = ""
 let salut_1 = ["Bonjour"]
 let salut_2 = ["Bonsoir", "Salutations", "Salut"]
@@ -2576,4 +2581,5 @@ document.getElementById("nom").innerHTML = rplrplsmpl["prenom"] + " " + rplrplsm
 
 document.getElementById("avis").innerHTML = avis;
 }
-</script></head><body><h1 style="text-align:center">Générateur d'avis sur Cigéo : Déclaration d'Utilité Publique</h1>Pour générer un nouvel avis, rechargez cette page.<h2>Nom</h2><div id="nom" style="font-family:monospace"></div><h2>Avis</h2><div id="avis" style="font-family:monospace"></div></body></html>
+window.onload = function(){bouton();}
+</script></head><body><h2 style="text-align:center">Générateur d'avis sur Cigéo : Déclaration d'Utilité Publique</h2><input type="button" value="Générer un nouvel avis" onclick="bouton()"><h3>Nom</h3><div id="nom" style="font-family:monospace"></div><h3>Avis</h3><div id="avis" style="font-family:monospace"></div></body></html>
