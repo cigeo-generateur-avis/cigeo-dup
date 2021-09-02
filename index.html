@@ -1,11 +1,14 @@
 <html lang="fr"><head><title>Générateur d'avis sur Cigéo : Déclaration d'Utilité Publique</title><script type="text/javascript">
 let rplrpl = {
   "prenom": ["André", "Josette", "Matthieu", "Clément", "Nicolas", "Didier"],
-  "nom": ["Durand", "Pavot"]
+  "nom": ["Durand", "Pavot"],
+  "trucpacool": ["Cigéo", "le projet Cigéo", "l'Andra", "CIGÉO", "le projet CIGÉO", "l'ANDRA", "le projet d'enfouissement des déchets radioactifs", "la déclaration d'utilité publique", "la Déclaration d'Utilité Publique"]
 }
+let rplrplsmpl = {}
+for(let rplrplkey in rplrpl){rplrplsmpl[rplrplkey]=rplrpl[rplrplkey].smpl();}
 
 Array.prototype.smpl = function(){return this[Math.floor(Math.random()*this.length)];}
-rplrplfun = function(rplrplfun_var){for(let rplrplkey in rplrpl){truc=rplrpl[rplrplkey].smpl(); rplrplfun_var.replace("{" + rplrplkey + "}", truc);}return rplrplfun_var;}
+rplrplfun = function(rplrplfun_var){for(let rplrplkey in rplrplsmpl){rplrplfun_var.replace("{" + rplrplkey + "}", rplrplsmpl[rplrplkey]);}return rplrplfun_var;}
 ucs = function(ucs_var){if(Math.random() < 1/ucs_var){return true}return false}
 window.onload = function(){
 let avis = ""
@@ -20,6 +23,9 @@ let salut_punct_3 = [" ?", ":)", ";)", ":-)", ":(", ":-(", "!!", "!!!", "!!!!", 
 
 let pres_1 = ["Je m'appelle {prenom} {nom}.", "Je m'appelle {nom} {prenom}.", "Je suis {prenom} {nom}.", "Je suis {nom} {prenom}."]
 let pres_2 = ["Mon pseudo c'est Bidule.", "Mon pseudo c'est Truc."]
+
+let argument_1 = ["Je suis contre {trucpacool}.", "Je ne suis pas d'accord avec {trucpacool}."]
+let argument_2 = ["Le nucléaire c'est vraiment tout pourri."]
 
 let sautdeligne = true
 if(ucs(7)){sautdeligne = false}
@@ -39,10 +45,30 @@ if(sautdeligne){avis+="<br/>"}
 }
 
 if(ucs(2)){
-else if(ucs(4)){avis+=pres_2.smpl()}
+if(ucs(4)){avis+=pres_2.smpl()}
 else{avis+=pres_1.smpl()}
+if(sautdeligne){avis+="<br/>"}
+}
+
+ajout_argu = function(ajout_argu_var){
+if(ucs(4)){ajout_argu_var+=argument_2.smpl()}
+else{ajout_argu_var+=argument_1.smpl()}
+if(sautdeligne){ajout_argu_var+="<br/>"}
+return ajout_argu_var;
+}
+
+avis = ajout_argu(avis)
+if(ucs(2)){avis = ajout_argu(avis);}
+if(ucs(2)){avis = ajout_argu(avis);}
+if(ucs(2)){avis = ajout_argu(avis);if(ucs(2)){avis = ajout_argu(avis);if(ucs(2)){avis = ajout_argu(avis);if(ucs(2)){avis = ajout_argu(avis);if(ucs(2)){avis = ajout_argu(avis);if(ucs(2)){avis = ajout_argu(avis);}}}}}}
+
+if(ucs(3)){
+document.getElementById("nom").innerHTML = rplrplsmpl["nom"] = rplrplsmpl["prenom"];
+}
+else{
+document.getElementById("nom").innerHTML = rplrplsmpl["prenom"] = rplrplsmpl["nom"];
 }
 
 document.getElementById("avis").innerHTML = avis;
 }
-</script></head><body><h1 style="text-align:center">Générateur d'avis sur Cigéo : Déclaration d'Utilité Publique</h1>Pour générer un nouvel avis, rechargez cette page.<h2>Avis</h2><pre><div id="avis"></div></pre></body></html>
+</script></head><body><h1 style="text-align:center">Générateur d'avis sur Cigéo : Déclaration d'Utilité Publique</h1>Pour générer un nouvel avis, rechargez cette page.<h2>Nom</h2><pre><div id="nom"></pre><h2>Avis</h2><pre><div id="avis"></div></pre></body></html>
