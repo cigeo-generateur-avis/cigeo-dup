@@ -2441,7 +2441,8 @@ let table = []
 for (var i = 0; i < chainee.length; i++) {
   if(chainee.charAt(i) == obto_1){ table.push(i); }
 }
-return chainee.replaceAt(table.smpl(), obto_2);
+if (table.length > 0){ return chainee.replaceAt(table.smpl(), obto_2);}
+else{return chainee }
 }
 function generateRandomLetter() {const alphabet = "abcdefghijklmnopqrstuvwxyz"; return alphabet[Math.floor(Math.random() * alphabet.length)]}
 ucs = function(ucs_var){if(Math.random() < 1/ucs_var){return true}return false}
@@ -2454,31 +2455,31 @@ smplrpl = function(smplrpl_var, fofofo = false){
 smplrpl_var = rplrplfun(smplrpl_var.smpl())
 if(fofofo === true && (fautedorthosystematik || ucs(4))){
 let ok = false
-if(ok===false){if(ucs(50)){smplrpl_var_new = obto(smplrpl_var, "e", "3"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
-if(ok===false){if(ucs(50)){smplrpl_var_new = obto(smplrpl_var, "a", "4"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
-if(ok===false){if(ucs(50)){smplrpl_var_new = obto(smplrpl_var, "i", "1"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
-if(ok===false){if(ucs(50)){smplrpl_var_new = obto(smplrpl_var, "i", "!"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
-if(ok===false){if(ucs(50)){smplrpl_var_new = obto(smplrpl_var, "i", "l"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
-if(ok===false){if(ucs(50)){smplrpl_var_new = obto(smplrpl_var, "l", "i"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
-if(ok===false){if(ucs(50)){smplrpl_var_new = obto(smplrpl_var, "o", "0"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
-if(ok===false){if(ucs(50)){smplrpl_var_new = obto(smplrpl_var, "é", "è"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
-if(ok===false){if(ucs(50)){smplrpl_var_new = obto(smplrpl_var, "è", "é"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
-if(ok===false){if(ucs(50)){smplrpl_var_new = obto(smplrpl_var, "e", "€"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
-if(ok===false){if(ucs(50)){smplrpl_var_new = obto(smplrpl_var, "u", "v"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
-if(ok===false){if(ucs(50)){smplrpl_var_new = obto(smplrpl_var, "v", "u"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
-if(ok===false){if(ucs(50)){smplrpl_var_new = obto(smplrpl_var, "d", "o"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
-if(ok===false){if(ucs(50)){smplrpl_var_new = obto(smplrpl_var, "o", "d"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
-if(ok===false){if(ucs(50)){smplrpl_var_new = obto(smplrpl_var, "w", "x"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
-if(ok===false){if(ucs(50)){smplrpl_var_new = obto(smplrpl_var, "x", "w"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
-if(ok===false){if(ucs(50)){smplrpl_var_new = obto(smplrpl_var, "r", "t"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
-if(ok===false){if(ucs(50)){smplrpl_var_new = obto(smplrpl_var, "t", "r"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
-if(ok===false){if(ucs(50)){smplrpl_var_new = obto(smplrpl_var, "j", "k"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
-if(ok===false){if(ucs(50)){smplrpl_var_new = obto(smplrpl_var, "k", "j"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
-if(ok===false){if(ucs(50)){smplrpl_var_new = obto(smplrpl_var, "o", "p"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
-if(ok===false){if(ucs(50)){smplrpl_var_new = obto(smplrpl_var, "p", "o"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
-if(ok===false){if(ucs(50)){smplrpl_var_new = obto(smplrpl_var, ",", ";"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
-if(ok===false){if(ucs(50)){smplrpl_var_new = obto(smplrpl_var, "e", "f"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
-if(ok===false){if(ucs(50)){smplrpl_var_new = obto(smplrpl_var, "f", "e"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
+if(ok===false){if(ucs(10)){smplrpl_var_new = obto(smplrpl_var, "e", "3"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
+if(ok===false){if(ucs(10)){smplrpl_var_new = obto(smplrpl_var, "a", "4"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
+if(ok===false){if(ucs(10)){smplrpl_var_new = obto(smplrpl_var, "i", "1"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
+if(ok===false){if(ucs(10)){smplrpl_var_new = obto(smplrpl_var, "i", "!"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
+if(ok===false){if(ucs(10)){smplrpl_var_new = obto(smplrpl_var, "i", "l"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
+if(ok===false){if(ucs(10)){smplrpl_var_new = obto(smplrpl_var, "l", "i"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
+if(ok===false){if(ucs(10)){smplrpl_var_new = obto(smplrpl_var, "o", "0"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
+if(ok===false){if(ucs(10)){smplrpl_var_new = obto(smplrpl_var, "é", "è"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
+if(ok===false){if(ucs(10)){smplrpl_var_new = obto(smplrpl_var, "è", "é"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
+if(ok===false){if(ucs(10)){smplrpl_var_new = obto(smplrpl_var, "e", "€"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
+if(ok===false){if(ucs(10)){smplrpl_var_new = obto(smplrpl_var, "u", "v"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
+if(ok===false){if(ucs(10)){smplrpl_var_new = obto(smplrpl_var, "v", "u"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
+if(ok===false){if(ucs(10)){smplrpl_var_new = obto(smplrpl_var, "d", "o"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
+if(ok===false){if(ucs(10)){smplrpl_var_new = obto(smplrpl_var, "o", "d"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
+if(ok===false){if(ucs(10)){smplrpl_var_new = obto(smplrpl_var, "w", "x"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
+if(ok===false){if(ucs(10)){smplrpl_var_new = obto(smplrpl_var, "x", "w"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
+if(ok===false){if(ucs(10)){smplrpl_var_new = obto(smplrpl_var, "r", "t"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
+if(ok===false){if(ucs(10)){smplrpl_var_new = obto(smplrpl_var, "t", "r"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
+if(ok===false){if(ucs(10)){smplrpl_var_new = obto(smplrpl_var, "j", "k"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
+if(ok===false){if(ucs(10)){smplrpl_var_new = obto(smplrpl_var, "k", "j"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
+if(ok===false){if(ucs(10)){smplrpl_var_new = obto(smplrpl_var, "o", "p"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
+if(ok===false){if(ucs(10)){smplrpl_var_new = obto(smplrpl_var, "p", "o"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
+if(ok===false){if(ucs(10)){smplrpl_var_new = obto(smplrpl_var, ",", ";"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
+if(ok===false){if(ucs(10)){smplrpl_var_new = obto(smplrpl_var, "e", "f"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
+if(ok===false){if(ucs(10)){smplrpl_var_new = obto(smplrpl_var, "f", "e"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
 
 if(ok===false){smplrpl_var = smplrpl_var.replaceAt(Math.floor(Math.random()*smplrpl_var.length), generateRandomLetter())}
 }
