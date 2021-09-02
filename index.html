@@ -2434,19 +2434,36 @@ let rplrpl = {
   "villagelocal": ["Bure", "Saudron", "Mandres-en-Barrois", "Luméville-en-Ornois", "Gondrecourt-le-Château", "Joinville", "Ligny-en-Barrois", "Bar-le-Duc", "Tourailles-sous-Bois", "Gillaumé", "Pansey", "Ribeaucourt", "Biencourt", "Bonnet", "Abainville", "Échenay", "Cirfontaines-en-Ornois", "Lezéville", "Chassey-Beaupré", "Montiers", "Montiers-sur-Saulx", "Horville-en-Ornois"],
   "grandeville": ["Paris", "Marseille", "Lyon", "Toulouse", "Nice", "Nantes", "Strasbourg", "Montpellier", "Bordeaux", "Rennes", "Le Havre", "Reims", "Lille", "Saint-Etienne", "Toulon", "Angers", "Brest", "Grenoble", "Dijon", "Le Mans", "Clermont-Ferrand", "Amiens", "Limoges", "Aix-en-Provence", "Nîmes", "Tours", "Saint-Denis", "Metz", "Villeurbanne", "Besançon", "Caen", "Orléans", "Mulhouse", "Rouen", "Perpignan", "Boulogne-Billancourt", "Nancy", "Roubaix", "Argenteuil", "Fort-de-France", "Tourcoing", "Montreuil", "Saint-Paul", "Versailles", "Avignon", "Poitiers", "Saint-Denis", "Nanterre", "Créteil", "Pau", "Aulnay-sous-Bois", "La Rochelle", "Vitry-sur-Seine", "Calais", "Colombes", "Asnières-sur-Seine", "Bourges", "Rueil-Malmaison", "Champigny-sur-Marne", "Saint-Maur-des-Fossés", "Antibes", "Dunkerque", "Béziers", "Courbevoie", "Saint-Pierre", "Saint-Nazaire", "Cannes", "Colmar", "Quimper", "Valence", "Villeneuve-d’Ascq", "Aubervilliers", "Mérignac", "Les Abymes", "Drancy", "Troyes", "Lorient", "Le Tampon", "Saint-Quentin", "La Seyne-sur-Mer", "Antony", "Neuilly-sur-Seine", "Niort", "Noisy-le-Grand", "Sarcelles", "Charleville-Mézières", "Chambéry", "Beauvais", "Pessac", "Vénissieux", "Cholet", "Cergy", "Levallois-Perret", "Ajaccio", "Vannes", "Montauban", "Laval", "Evreux", "Hyères", "Issy-les-Moulineaux"],
 }
-function generateRandomLetter() {const alphabet = "abcdefghijklmnopqrstuvwxyz"; return alphabet[Math.floor(Math.random() * alphabet.length)]}
 String.prototype.replaceAt = function(index, replacement){return this.substr(0, index) + replacement + this.substr(index + replacement.length);}
+Array.prototype.smpl = function(){return this[Math.floor(Math.random()*this.length)];}
+function obto(chainee, obto_1, obto_2){
+let table = []
+for (var i = 0; i < chainee.length; i++) {
+  if(chainee.charAt(i) == obto_1){ table += i; }
+}
+return chainee.replaceAt(table.smpl(), obto_2);
+}
+function generateRandomLetter() {const alphabet = "abcdefghijklmnopqrstuvwxyz"; return alphabet[Math.floor(Math.random() * alphabet.length)]}
 ucs = function(ucs_var){if(Math.random() < 1/ucs_var){return true}return false}
 let fautedorthosystematik = false
 if(ucs(3)){fautedorthosystematik = true}
-Array.prototype.smpl = function(){return this[Math.floor(Math.random()*this.length)];}
 let rplrplsmpl = {}
 for(let rplrplkey in rplrpl){rplrplsmpl[rplrplkey]=rplrpl[rplrplkey].smpl();}
 rplrplfun = function(rplrplfun_var){for(let rplrplkey in rplrplsmpl){rplrplfun_var = rplrplfun_var.replace("{" + rplrplkey + "}", rplrplsmpl[rplrplkey]);}return rplrplfun_var;}
-smplrpl = function(smplrpl_var){
+smplrpl = function(smplrpl_var, fofofo){
 smplrpl_var = rplrplfun(smplrpl_var.smpl())
-if(fautedorthosystematik || ucs(4)){
-smplrpl_var = smplrpl_var.replaceAt(Math.floor(Math.random()*smplrpl_var.length), generateRandomLetter())
+if(fofofo === true && (fautedorthosystematik || ucs(4))){
+let ok = false
+if(ok===false){if(ucs(200)){smplrpl_var_new = obto(smplrpl_var, "e", "3"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
+if(ok===false){if(ucs(200)){smplrpl_var_new = obto(smplrpl_var, "a", "4"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
+if(ok===false){if(ucs(200)){smplrpl_var_new = obto(smplrpl_var, "i", "1"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
+if(ok===false){if(ucs(200)){smplrpl_var_new = obto(smplrpl_var, "i", "!"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
+if(ok===false){if(ucs(200)){smplrpl_var_new = obto(smplrpl_var, "i", "l"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
+if(ok===false){if(ucs(200)){smplrpl_var_new = obto(smplrpl_var, "l", "i"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
+if(ok===false){if(ucs(200)){smplrpl_var_new = obto(smplrpl_var, "o", "0"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
+if(ok===false){if(ucs(200)){smplrpl_var_new = obto(smplrpl_var, " ", "_"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
+
+if(ok===false){smplrpl_var = smplrpl_var.replaceAt(Math.floor(Math.random()*smplrpl_var.length), generateRandomLetter())}
 }
 return smplrpl_var
 }
@@ -2490,13 +2507,13 @@ if(sautdeligne){avis+="<br/><br/>"}else{avis+= " "}
 }
 
 if(ucs(2)){
-if(ucs(4)){avis+=smplrpl(pres_2)}
-else{avis+=smplrpl(pres_1)}
+if(ucs(4)){avis+=smplrpl(pres_2, true)}
+else{avis+=smplrpl(pres_1, true)}
 if(sautdeligne){avis+="<br/><br/>"}else{avis+= " "}
 }
 
 ajout_argu = function(ajout_argu_var){
-return smplrpl(argument)
+return smplrpl(argument, true)
 }
 
 avis += ajout_argu(avis)
