@@ -2441,12 +2441,12 @@ let rplrpl = {
 }
 String.prototype.replaceAt = function(index, replacement){return this.substr(0, index) + replacement + this.substr(index + replacement.length);}
 String.prototype.removeCharAt = function (i) {var tmp = this.split('');tmp.splice(i - 1 , 1);return tmp.join('');}
+String.prototype.doublerLeCharacter = function (i) {return this.substr(0, i) + this[i] + this.substr(i, this.length - i)}
 Array.prototype.smpl = function(){return this[Math.floor(Math.random()*this.length)];}
 
 function fallbackCopyTextToClipboard(text) {
   var textArea = document.createElement("textarea");
   textArea.value = text;
-  // Avoid scrolling to bottom
   textArea.style.top = "0";
   textArea.style.left = "0";
   textArea.style.position = "fixed";
@@ -2488,7 +2488,8 @@ smplrpl = function(smplrpl_var, fofofo = false){
 smplrpl_var = rplrplfun(smplrpl_var.smpl())
 if(fofofo === true && (fautedorthosystematik || ucs(4))){
 let ok = false
-if(ok===false){if(ucs(7)){smplrpl_var = smplrpl_var.removeCharAt(Math.floor(Math.random() * smplrpl_var.length)); ok = true;}}
+if(ok===false){if(ucs(5)){smplrpl_var = smplrpl_var.doublerLeCharacter(Math.floor(Math.random() * smplrpl_var.length)); ok = true;}}
+if(ok===false){if(ucs(10)){smplrpl_var = smplrpl_var.removeCharAt(Math.floor(Math.random() * smplrpl_var.length)); ok = true;}}
 
 if(ok===false){if(ucs(20)){smplrpl_var_new = obto(smplrpl_var, "é", "è"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
 if(ok===false){if(ucs(20)){smplrpl_var_new = obto(smplrpl_var, "è", "é"); if(smplrpl_var_new != smplrpl_var){smplrpl_var = smplrpl_var_new; ok = true;}}}
