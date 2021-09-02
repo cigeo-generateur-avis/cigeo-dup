@@ -2439,7 +2439,7 @@ Array.prototype.smpl = function(){return this[Math.floor(Math.random()*this.leng
 function obto(chainee, obto_1, obto_2){
 let table = []
 for (var i = 0; i < chainee.length; i++) {
-  if(chainee.charAt(i) == obto_1){ table += i; }
+  if(chainee.charAt(i) == obto_1){ table.push(i); }
 }
 return chainee.replaceAt(table.smpl(), obto_2);
 }
