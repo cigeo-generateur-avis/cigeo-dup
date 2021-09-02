@@ -7,7 +7,7 @@ let rplrpl = {
 Array.prototype.smpl = function(){return this[Math.floor(Math.random()*this.length)];}
 let rplrplsmpl = {}
 for(let rplrplkey in rplrpl){rplrplsmpl[rplrplkey]=rplrpl[rplrplkey].smpl();}
-rplrplfun = function(rplrplfun_var){for(let rplrplkey in rplrplsmpl){rplrplfun_var.replace("{" + rplrplkey + "}", rplrplsmpl[rplrplkey]);}return rplrplfun_var;}
+rplrplfun = function(rplrplfun_var){for(let rplrplkey in rplrplsmpl){rplrplfun_var = rplrplfun_var.replace("{" + rplrplkey + "}", rplrplsmpl[rplrplkey]);}return rplrplfun_var;}
 ucs = function(ucs_var){if(Math.random() < 1/ucs_var){return true}return false}
 smplrpl = function(smplrpl_var){return rplrplfun(smplrpl_var.smpl());}
 window.onload = function(){
