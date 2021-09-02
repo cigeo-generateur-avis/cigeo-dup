@@ -2429,7 +2429,10 @@ let rplrpl = {
 "Huynh",
 "Rouge",
 "Collignon"],
-  "trucpacool": ["Cigéo", "le projet Cigéo", "l'Andra", "CIGÉO", "le projet CIGÉO", "l'ANDRA", "le projet d'enfouissement des déchets radioactifs", "la déclaration d'utilité publique", "la Déclaration d'Utilité Publique"]
+  "trucpacool": ["Cigéo", "le projet Cigéo", "l'Andra", "CIGÉO", "le projet CIGÉO", "l'ANDRA", "le projet d'enfouissement des déchets radioactifs", "la déclaration d'utilité publique", "la Déclaration d'Utilité Publique", "cette société énergivore", "l'industrie nucléaire", "l'industrie nucléaire, civile comme militaire", "la DUP", "le dossier de DUP déposé par l'Andra", "le dossier de DUP déposé par l'Andra"],
+  "trucincomprehensible" : ["maîtrise foncière", "mise en compatibilité des documents d'urbanisme", "commission d'enquête publique", "étude d'impact", "maîtres d'ouvrage", "mesures environnementales", "études de solution de valorisation des verses", "dimensionnement des ouvrages hydrauliques", "installation terminale embranchée", "emploi induit", "schéma de cohérence territorial", "plan local d'urbanisme intercommunal", "projet de développement du territoire", "contribution économique territoriale", "potentiel socio-économique"],
+  "villagelocal": ["Bure", "Saudron", "Mandres-en-Barrois", "Luméville-en-Ornois", "Gondrecourt-le-Château", "Joinville", "Ligny-en-Barrois", "Bar-le-Duc", "Tourailles-sous-Bois", "Gillaumé", "Pansey", "Ribeaucourt", "Biencourt", "Bonnet", "Abainville", "Échenay", "Cirfontaines-en-Ornois", "Lezéville", "Chassey-Beaupré", "Montiers", "Montiers-sur-Saulx", "Horville-en-Ornois"],
+  "grandeville": ["Paris", "Marseille", "Lyon", "Toulouse", "Nice", "Nantes", "Strasbourg", "Montpellier", "Bordeaux", "Rennes", "Le Havre", "Reims", "Lille", "Saint-Etienne", "Toulon", "Angers", "Brest", "Grenoble", "Dijon", "Le Mans", "Clermont-Ferrand", "Amiens", "Limoges", "Aix-en-Provence", "Nîmes", "Tours", "Saint-Denis", "Metz", "Villeurbanne", "Besançon", "Caen", "Orléans", "Mulhouse", "Rouen", "Perpignan", "Boulogne-Billancourt", "Nancy", "Roubaix", "Argenteuil", "Fort-de-France", "Tourcoing", "Montreuil", "Saint-Paul", "Versailles", "Avignon", "Poitiers", "Saint-Denis", "Nanterre", "Créteil", "Pau", "Aulnay-sous-Bois", "La Rochelle", "Vitry-sur-Seine", "Calais", "Colombes", "Asnières-sur-Seine", "Bourges", "Rueil-Malmaison", "Champigny-sur-Marne", "Saint-Maur-des-Fossés", "Antibes", "Dunkerque", "Béziers", "Courbevoie", "Saint-Pierre", "Saint-Nazaire", "Cannes", "Colmar", "Quimper", "Valence", "Villeneuve-d’Ascq", "Aubervilliers", "Mérignac", "Les Abymes", "Drancy", "Troyes", "Lorient", "Le Tampon", "Saint-Quentin", "La Seyne-sur-Mer", "Antony", "Neuilly-sur-Seine", "Niort", "Noisy-le-Grand", "Sarcelles", "Charleville-Mézières", "Chambéry", "Beauvais", "Pessac", "Vénissieux", "Cholet", "Cergy", "Levallois-Perret", "Ajaccio", "Vannes", "Montauban", "Laval", "Evreux", "Hyères", "Issy-les-Moulineaux"],
 }
 Array.prototype.smpl = function(){return this[Math.floor(Math.random()*this.length)];}
 let rplrplsmpl = {}
@@ -2441,18 +2444,17 @@ window.onload = function(){
 let avis = ""
 let salut_1 = ["Bonjour"]
 let salut_2 = ["Bonsoir", "Salutations", "Salut"]
-let salut_3 = ["Hey", "Wesh", "Coucou"]
-let salut_4 = ["Coucou mes poussins", "Yo les pro-nucléaires", "Cher David Mazoyer"]
+let salut_3 = ["Hey", "Wesh", "Coucou", "Bien le bonjour", "Bonjour à tous", "Bonjour à tous et à toutes"]
+let salut_4 = ["Coucou mes poussins", "Yo les pro-nucléaires", "Cher David Mazoyer", "Chère Andra"]
 
 let salut_punct_1 = [","]
 let salut_punct_2 = [".", " !"]
 let salut_punct_3 = [" ?", " :)", " ;)", " :-)", " :(", " :-(", " !!", " !!!", " !!!!", " !!!!!"]
 
-let pres_1 = ["Je m'appelle {prenom} {nom}.", "Je m'appelle {nom} {prenom}.", "Je suis {prenom} {nom}.", "Je suis {nom} {prenom}."]
-let pres_2 = ["Mon pseudo c'est Bidule.", "Mon pseudo c'est Truc."]
+let pres_1 = ["Je m'appelle {prenom} {nom}.", "Je m'appelle {nom} {prenom}.", "Je suis {prenom} {nom}.", "Je suis {nom} {prenom}.", "Je viens de {villagelocal}.", "J'habite à {villagelocal}.", "Je suis de {villagelocal}.", "Je m'appelle {prenom} {nom} et je suis de {villagelocal}.", "J'habite à {grandeville}.", "Je viens de {grandeville}.", "Je suis de {grandeville}."]
+let pres_2 = ["Mon pseudo c'est Bidule.", "Mon pseudo c'est Truc.", "Je viens de {grandeville}, et c'est pas parce que je viens de loin que je n'ai pas d'avis à donner sur le projet !", "Je viens de {villagelocal} et j'ai donc complètement mon mot à dire sur le projet !", "Mon nom importe peu."]
 
-let argument_1 = ["Je suis contre {trucpacool}.", "Je ne suis pas d'accord avec {trucpacool}."]
-let argument_2 = ["Le nucléaire c'est vraiment tout pourri."]
+let argument = ["Je suis contre {trucpacool}.", "Je ne suis pas d'accord avec {trucpacool}.", "À bas {trucpacool} !", "Il faut arrêter {trucpacool !}", "Tout le monde déteste {trucpacool} !", "Le nucléaire c'est vraiment tout pourri.", "Je me demande jusqu'où ira la radioactivité en cas d'accident. J'ai beaucoup d'amis à {grandeville}.", "Je suis contre ce projet parce que l'Andra veut nous exproprier pour construire une poubelle nucléaire.", "L'Autorité environnementale a raison.", "On est pas DUP !", "Honnêtement, rien que le nom, \"Ci-gé-o\", ça sonne super mal.", "De {grandeville} à {villagelocal}, personne ne veut de ce projet.", "Cigéo va polluer les rivières locales.", "Cigéo va polluler les cours d'eau locaux.", "Il y a déjà eu ce genre de projets, en Finlande et aux États-Unis, et ça s'est mal passé à chaque fois.", "Cigéo n'est pas d'utilité publique ! Le projet donne un argument à l'industrie nucléaire pour continuer leur travail, alors qu'il faudrait plutôt tout arrêter !", "Bla bla bla {trucincomprehensible}", "Blah blah blah {trucincomprehensible}", "Bla bla {trucincomprehensible}", "Blah blah {trucincomprehensible}"]
 
 let bye_1 = ["Cordialement."]
 let bye_2 = ["Salut les poussins !"]
@@ -2481,8 +2483,7 @@ if(sautdeligne){avis+="<br/><br/>"}else{avis+= " "}
 }
 
 ajout_argu = function(ajout_argu_var){
-if(ucs(4)){return smplrpl(argument_2)}
-else{return smplrpl(argument_1)}
+return smplrpl(argument)
 }
 
 avis += ajout_argu(avis)
