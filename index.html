@@ -4,10 +4,9 @@ let rplrpl = {
   "nom": ["Durand", "Pavot"],
   "trucpacool": ["Cigéo", "le projet Cigéo", "l'Andra", "CIGÉO", "le projet CIGÉO", "l'ANDRA", "le projet d'enfouissement des déchets radioactifs", "la déclaration d'utilité publique", "la Déclaration d'Utilité Publique"]
 }
+Array.prototype.smpl = function(){return this[Math.floor(Math.random()*this.length)];}
 let rplrplsmpl = {}
 for(let rplrplkey in rplrpl){rplrplsmpl[rplrplkey]=rplrpl[rplrplkey].smpl();}
-
-Array.prototype.smpl = function(){return this[Math.floor(Math.random()*this.length)];}
 rplrplfun = function(rplrplfun_var){for(let rplrplkey in rplrplsmpl){rplrplfun_var.replace("{" + rplrplkey + "}", rplrplsmpl[rplrplkey]);}return rplrplfun_var;}
 ucs = function(ucs_var){if(Math.random() < 1/ucs_var){return true}return false}
 window.onload = function(){
