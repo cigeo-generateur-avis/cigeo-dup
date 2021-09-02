@@ -2450,7 +2450,7 @@ if(ucs(3)){fautedorthosystematik = true}
 let rplrplsmpl = {}
 for(let rplrplkey in rplrpl){rplrplsmpl[rplrplkey]=rplrpl[rplrplkey].smpl();}
 rplrplfun = function(rplrplfun_var){for(let rplrplkey in rplrplsmpl){rplrplfun_var = rplrplfun_var.replace("{" + rplrplkey + "}", rplrplsmpl[rplrplkey]);}return rplrplfun_var;}
-smplrpl = function(smplrpl_var, fofofo){
+smplrpl = function(smplrpl_var, fofofo = false){
 smplrpl_var = rplrplfun(smplrpl_var.smpl())
 if(fofofo === true && (fautedorthosystematik || ucs(4))){
 let ok = false
