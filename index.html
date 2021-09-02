@@ -2600,7 +2600,10 @@ else{avis+=smplrpl(bye_1)}
 
 if(ucs(6)){
 avis+="<br/><br/>"
-if(ucs(2)){avis += rplrplsmpl["prenom"]}
+if(ucs(15)){avis += rplrplsmpl["nom"] + " " + rplrplsmpl["prenom"];}
+else if(ucs(15)){avis += rplrplsmpl["nom"];}
+else if(ucs(15)){avis += rplrplsmpl["prenom"][0] + ". " + rplrplsmpl["nom"];}
+else if(ucs(2)){avis += rplrplsmpl["prenom"]}
 else{avis += rplrplsmpl["prenom"] + " " + rplrplsmpl["nom"]}
 }
 
@@ -2618,4 +2621,4 @@ document.getElementById("nom").innerHTML = rplrplsmpl["prenom"] + " " + rplrplsm
 document.getElementById("avis").innerHTML = avis;
 }
 window.onload = function(){bouton();}
-</script></head><body><h2 style="text-align:center">Générateur d'avis sur Cigéo : Déclaration d'Utilité Publique</h2><div style="text-align: center;"><input type="button" value="Générer un nouvel avis" onclick="bouton()"></div><h3 style="display:inline-block">Nom</h3> <input type="button" value="Copier dans le presse-papier" onclick="copyTextToClipboard(document.getElementById('nom').innerText)"><div id="nom" style="font-family:monospace"></div><h3 style="display:inline-block">Avis</h3> <input type="button" value="Copier dans le presse-papier" onclick="copyTextToClipboard(document.getElementById('avis').innerText)"><div id="avis" style="font-family:monospace"></div></body></html>
+</script></head><body><h2 style="text-align:center">Générateur d'avis sur Cigéo : Déclaration d'Utilité Publique</h2><div style="text-align: center;">L’enquête publique préalable à la Déclaration d’Utilité Publique (DUP) du projet Cigéo démarre le <b>15 septembre 2021</b> à 9h30 (heure de Paris). Bien sûr, cette enquête est une mascarade : le projet a déjà été validé politiquement et économiquement, et nos avis ne seront pas pris en compte. Si malgré tout vous souhaitez accomplir votre devoir citoyen et participer à l'enquête, n'hésitez pas à vous inspirer des avis générés sur ce site web. Pour envoyer vos avis à partir du 15 septembre : <a href="https://www.registre-numerique.fr/dup-cigeo">https://www.registre-numerique.fr/dup-cigeo</a><br/><br/><input type="button" value="Générer un nouvel avis" onclick="bouton()"></div><h3 style="display:inline-block">Nom</h3> <input type="button" value="Copier dans le presse-papier" onclick="copyTextToClipboard(document.getElementById('nom').innerText)"><div id="nom" style="font-family:monospace"></div><h3 style="display:inline-block">Avis</h3> <input type="button" value="Copier dans le presse-papier" onclick="copyTextToClipboard(document.getElementById('avis').innerText)"><div id="avis" style="font-family:monospace"></div></body></html>
