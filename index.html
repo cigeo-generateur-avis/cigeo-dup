@@ -6,18 +6,22 @@ let avis = ""
 let salut_1 = ["Bonjour"]
 let salut_2 = ["Bonsoir", "Salutations", "Salut"]
 let salut_3 = ["Hey", "Wesh", "Coucou"]
-let salut_4 = ["Bien le bonjour"]
-let salut_5 = ["Coucou mes poussins", "Yo les pro-nucléaires"]
+let salut_4 = ["Coucou mes poussins", "Yo les pro-nucléaires"]
+let salut_punct_1 = [","]
+let salut_punct_2 = [".", " !"]
+let salut_punct_3 = [" ?"]
 
 if(ucs(5)){}
 else{
-if(ucs(16)){avis+=salut_5.smpl()}
-else if(ucs(8)){avis+=salut_4.smpl()}
-else if(ucs(4)){avis+=salut_3.smpl()}
+else if(ucs(12)){avis+=salut_4.smpl()}
+else if(ucs(6)){avis+=salut_3.smpl()}
 else if(ucs(3)){avis+=salut_2.smpl()}
 else{avis+=salut_1.smpl()}
+else if(ucs(10)){avis+=salut_punct_3.smpl()}
+else if(ucs(3)){avis+=salut_punct_2.smpl()}
+else{avis+=salut_punct_1.smpl()}
 }
 
 document.getElementById("avis").innerHTML = avis;
 }
-</script></head><body><h1 style="text-align:center">Générateur d'avis sur Cigéo : Déclaration d'Utilité Publique</h1>Pour générer un nouvel avis, rechargez cette page.<h2>Avis</h2><div id="avis"></div></body></html>
+</script></head><body><h1 style="text-align:center">Générateur d'avis sur Cigéo : Déclaration d'Utilité Publique</h1>Pour générer un nouvel avis, rechargez cette page.<h2>Avis</h2><pre><div id="avis"></div></pre></body></html>
