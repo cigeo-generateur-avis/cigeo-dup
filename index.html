@@ -2479,7 +2479,7 @@ bouton = function(){
 
 let rplrplsmpl = {}
 for(let rplrplkey in rplrpl){rplrplsmpl[rplrplkey]=rplrpl[rplrplkey].smpl();}
-rplrplfun = function(rplrplfun_var){for(let rplrplkey in rplrplsmpl){rplrplfun_var = rplrplfun_var.replace("{" + rplrplkey + "}", rplrplsmpl[rplrplkey]);}return rplrplfun_var;}
+rplrplfun = function(rplrplfun_var){for(let rplrplkey in rplrplsmpl){rplrplfun_var = rplrplfun_var.replaceAll("{" + rplrplkey + "}", rplrplsmpl[rplrplkey]);}return rplrplfun_var;}
 
 let fautedorthosystematik = false
 if(ucs(3)){fautedorthosystematik = true}
